@@ -1,0 +1,145 @@
+.logo-img{
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+    
+  
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.7em;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  } 
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffcff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header img {
+    height: 40px;
+  }
+  /*.nav-links{
+    margin: 0 15px;
+    text-decoration: none;
+    color: #5c4200;
+    font-weight: 500;
+    position: relative;
+  }
+  .nav-links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #b68100;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+  }
+  .nav-links:hover::after {
+    width: 100%;
+  }*/
+  
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    font-size: 14px;
+  }
+  
+  .nav-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-icons i {
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  
+  
+  /*.logo-img{
+      width: 50%;
+      height: auto;
+      display: block;
+      
+  
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      
+    }
+    
+    .header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      
+    }
+    
+    .header img {
+      height: 50px;
+    }
+    
+    .nav-links {
+      display: flex;
+      flex: 1;    
+     justify-content: center;
+     align-items: center;
+     gap: 30px; 
+    }
+    
+    .nav-links a {
+      color: rgb(145, 127, 23);
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      
+    }
+    
+    .nav-icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .nav-icons i {
+      font-size: 18px;
+      cursor: pointer;
+    }
