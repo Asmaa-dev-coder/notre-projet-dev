@@ -142,16 +142,8 @@
     .nav-icons i {
       font-size: 18px;
       cursor: pointer;
-    }
-    
-    .produits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 0 40px 40px;
-  }
-  */
-   .titre-page {
+    }*/
+      .titre-page {
     text-align: center;
     font-size: 32px;
     margin: 40px 0 20px;
