@@ -151,41 +151,85 @@
   
   }
   .hero-section {
-    background-color: var(--light-color);
+    background-color: #fdf1d3;
     padding: 60px 20px;
     text-align: center;
     margin-bottom: 40px;
   }
   .titre-page {
-    font-family: "Mapolice" , sans-serif;
-    font-family: var(--font-title);
+    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 3rem;
-    color: #b88e0e;
-    margin-bottom: 15px;
+    color: #6b4e20;
+    margin: 40px 0 20px;
   }
   
   .subtitle {
-    font-family: "Mapolice", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto;
-    color: color(srgb red green blue)
+    color: #705328;
   }
-  @font-face {
-    font-family: 'Mapolice'; /* Le nom que tu vas utiliser pour la police */
-    src: url('projet/Font/Mapolice.ttf/Playfair-Italic-VariableFont_opsz\,wdth\,wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  
   /*produits*/
+  /*.produit-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+  }*/
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  
+  }
+  
+  .titre-principal {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #6b4e20;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-divider {
+    width: 80px;
+    height: 3px;
+    background-color: #d2ae52;
+    margin: 15px auto 0;
+  }
+  
+  .discription-produit {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+  }
+  
+  .sous-titre {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: #6b4e20;
+    margin: 25px 0 15px;
+  }
+  
+  .description-text {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+  }
   .produits {
     padding: 40px 50px;
   }
   
   .produit-section {
     margin-bottom: 50px;
+    max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
   }
-  
+  /*
   .produit-section h3 {
     font-size: 2em;
     color: #fca417;
@@ -231,7 +275,7 @@ z-index: 1;  }
   z-index: -1;
 }
 
-.discription-produit h4 {
+/*.discription-produit h4 {
   font-size: 22px;
   color: #5C3B1E;
   margin-bottom: 10px;
@@ -248,10 +292,10 @@ z-index: 1;  }
   text-align: justify;
   margin-bottom: 15px;
   font-family: 'Segoe UI', sans-serif;
-}
+} */
   
 
-  .produits-grid {
+  /*.produits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
@@ -271,7 +315,7 @@ z-index: 1;  }
     height: 200px;
     object-fit: cover;
   }
-  
+  */
   .card-produit h3 {
     margin: 15px 0 5px;
     color: #7a4e0d;
@@ -282,7 +326,6 @@ z-index: 1;  }
     padding: 0 15px;
     color: #555;
   }
-  
   .card-produit .prix {
     font-weight: bold;
     color: #b88e0e;
@@ -302,6 +345,55 @@ z-index: 1;  }
   .card-produit button:hover {
     background-color: #d89b00;
   }
+  .produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+  }
+  
+  .card-produit {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card-produit.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card-produit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-image-container {
+    position: relative;
+    height: 200px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .card-produit img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
   
   /* Responsive Design */
   @media (max-width: 768px) {
