@@ -151,16 +151,29 @@
   
   }
   .hero-section {
-    background-color: #fdf1d3;
+background-image: url('../Styles/bianca-ackermann-ZHOmQ_0X6QQ-unsplash.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
     padding: 60px 20px;
     text-align: center;
     margin-bottom: 40px;
+    color: white
+    ; 
+    position: relative;
+  }
+  .titre-page, .subtitle{
+    position: relative;
+    z-index: 1;
+  }
+  .hero-section hover {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 1), rgba(255, 152, 0, 1));
   }
   .titre-page {
     font-family: 'Times New Roman', Times, serif;
     font-family: 'Times New Roman', Times, serif;
     font-size: 3rem;
-    color: #6b4e20;
+    color: wheat;
     margin: 40px 0 20px;
   }
   
@@ -169,7 +182,7 @@
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto;
-    color: #705328;
+    color: white;
   }
   
   /*produits*/
@@ -317,16 +330,20 @@ z-index: 1;  }
   }
   */
   .card-produit h3 {
+    font-family: arial , sans serif;
+    text-align: center;
     margin: 15px 0 5px;
     color: #7a4e0d;
   }
   
   .card-produit p {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     padding: 0 15px;
     color: #555;
   }
   .card-produit .prix {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #b88e0e;
     margin: 10px 0;
@@ -340,11 +357,14 @@ z-index: 1;  }
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: auto;
   }
   
   .card-produit button:hover {
     background-color: #d89b00;
+
   }
+  
   .produits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -352,7 +372,11 @@ z-index: 1;  }
   }
   
   .card-produit {
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   background-color: #FFF3E0;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -361,6 +385,13 @@ z-index: 1;  }
     transform: translateY(20px);
     animation: fadeIn 0.5s forwards;
   }
+  .card-produit:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+  
   
   @keyframes fadeIn {
     to {
@@ -389,8 +420,9 @@ z-index: 1;  }
     overflow: hidden;
   }
   .card-produit img {
+    transition: transform 0.3s ease;
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
   }
   
