@@ -477,4 +477,38 @@ z-index: 1;  }
   width: 100%; 
   height: auto; 
   object-fit: cover; */
-  
+  #message-panier {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+  }
+  #compteur-panier {
+   
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: #f39c12;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+  }
+  .prix {
+    font-weight: bold;
+    color: #f39c12;
+  }
