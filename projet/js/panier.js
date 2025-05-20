@@ -1,4 +1,8 @@
- // Récupérer le panier dans localStorage (tableau d'objets produits)
+console.log("panier.js chargé !");
+alert("panier.js bien exécuté !");
+
+
+// Récupérer le panier dans localStorage (tableau d'objets produits)
 function getPanier() {
   const panier = localStorage.getItem("panier");
   return panier ? JSON.parse(panier) : [];
@@ -26,6 +30,8 @@ function afficherPanier() {
   const panier = getPanier();
   console.log("Panier chargé :", panier);
   const container = document.getElementById("panier-produit-list");
+  container.innerHTML = "<p>TEST OK - PANIER</p>";
+
   const panierVide = document.getElementById("panier-vide");
   const totalContainer = document.getElementById("panier-total-container");
   const totalSpan = document.getElementById("panier-total");
@@ -47,9 +53,10 @@ function afficherPanier() {
     totalContainer.style.display = "block";
   }
 
-  let totalPrix = 0;
+  
 
   panier.forEach((produit, index) => {
+     console.log(`Ajout produit ${index}`, produit);
     const divProduit = document.createElement("div");
     divProduit.classList.add("produit-panier");
 
@@ -68,9 +75,9 @@ function afficherPanier() {
 
     container.appendChild(divProduit);
 
-    totalPrix += produit.prix * produit.quantite;
+  
   });
-
+ updateCompteur();
   totalSpan.textContent = totalPrix.toFixed(2);
 
   // Gestion modification quantité
@@ -121,6 +128,14 @@ document.getElementById("commander")?.addEventListener("click", () => {
 
 // Exécuter quand le DOM est prêt
 document.addEventListener('DOMContentLoaded', () => {
+  
+  const container = document.getElementById("panier-produit-list");
+  if (!container) {
+    alert("DIV panier-produit-list introuvable !");
+    return;
+  }
+
+  container.innerHTML = "<p>TEST OK - JS actif</p>";
   afficherPanier();
 });
 
