@@ -78,6 +78,8 @@ h1 {
 
 .details-produit {
   flex: 1;
+  position: relative; /* Pour que le bouton positionné en absolu soit relatif à ce conteneur */
+  padding-right: 100px; 
 }
 
 .details-produit h3 {
@@ -126,14 +128,7 @@ button:hover {
   background-color: #a86c0d;
 }
 
-.btn-vider {
-  margin-top: 30px;
-  background-color: #a44b00;
-}
 
-.btn-vider:hover {
-  background-color: #6e3300;
-}
 
 .btn-commander {
   margin-top: 30px;
@@ -164,6 +159,22 @@ button:hover {
   font-weight: 600;
   border-radius: 6px;
 }
+.btn-supprimer {
+  position: absolute;
+  right: 10px;  /* distance à droite */
+  top: 10px;    /* distance du haut */
+  background-color: #cd0a0a; /* rouge sympa pour bouton supprimer */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-supprimer:hover {
+  background-color: #f8ca89;
+}
+
 
 
   

@@ -1,141 +1,93 @@
+const panier = JSON.parse(localStorage.getItem('panier')) || [];
+const contenuPanier = document.getElementById('panier-produit-list');
+const totalElement = document.getElementById('panier-total');
+const panierVide = document.getElementById('panier-vide'); // bloc message panier vide
+const panierTotalContainer = document.getElementById('panier-total-container');
 
 
-
-// Récupérer le panier dans localStorage (tableau d'objets produits)
-function getPanier() {
-  const panier = localStorage.getItem("panier");
-  return panier ? JSON.parse(panier) : [];
-}
-
-// Sauvegarder panier dans localStorage
-function setPanier(panier) {
-  localStorage.setItem("panier", JSON.stringify(panier));
-}
-
-// Mettre à jour le compteur dans le header
-function updateCompteur() {
-  const panier = getPanier();
-  const totalQt = panier.reduce((sum, p) => sum + p.quantite, 0);
-  const compteurEl = document.getElementById("compteur-panier");
-  if (compteurEl) {
-    compteurEl.textContent = totalQt;
-  } else {
-    console.warn("Élément compteur-panier non trouvé dans le DOM.");
-  }
-}
-
-// Afficher le panier
 function afficherPanier() {
-  const panier = getPanier();
-  
-  const container = document.getElementById("panier-produit-list");
-  
-
-  const panierVide = document.getElementById("panier-vide");
-  const totalContainer = document.getElementById("panier-total-container");
-  const totalSpan = document.getElementById("panier-total");
-
-  if (!container || !panierVide || !totalContainer || !totalSpan) {
-    console.error("Un ou plusieurs éléments DOM manquent pour afficher le panier.");
-    return;
-  }
-
-  container.innerHTML = "";
+  contenuPanier.innerHTML = '';
 
   if (panier.length === 0) {
-    panierVide.style.display = "block";
-    totalContainer.style.display = "none";
-    updateCompteur();
+    contenuPanier.innerHTML = "<p>Votre panier est vide.</p>";
+    totalElement.textContent = "0";
     return;
-  } else {
-    panierVide.style.display = "none";
-    totalContainer.style.display = "block";
   }
-  let totalPrix = 0;
-  
 
-  panier.forEach((produit, index) => {
-     console.log(`Ajout produit ${index}`, produit);
-    const divProduit = document.createElement("div");
-    divProduit.classList.add("produit-panier");
+  let total = 0;
 
-    divProduit.innerHTML = `
-      <img src="${produit.image}" alt="${produit.nom}" />
-      <div class="details-produit">
-        <h3>${produit.nom}</h3>
-        <p>${produit.poids}</p>
-        <p class="prix">${produit.prix.toFixed(2)} €</p>
+  panier.forEach(produit => {
+    const divProduit = document.createElement('div');
+    divProduit.classList.add('produit-panier');
+
+    
+const prixNum = produit.prix;
+    total += prixNum * (produit.quantite || 1);
+
+
+   divProduit.innerHTML = `
+  <img src="${produit.image}" alt="${produit.nom}">
+  <div class="details-produit">
+    <h3>${produit.nom}</h3>
+    <p>Prix unitaire : ${produit.prix} €</p>
+    <div>
+      <button class="btn-moins" data-nom="${produit.nom}">-</button>
+      <span class="quantite">${produit.quantite}</span>
+      <button class="btn-plus" data-nom="${produit.nom}">+</button>
+   <button class="btn-supprimer" data-nom="${produit.nom}" style="margin-left:10px; color:red;">Supprimer</button>
       </div>
-      <input type="number" min="1" value="${produit.quantite}" class="quantite-input" data-index="${index}" />
-      <div class="boutons-panier">
-        <button class="btn-supprimer" data-index="${index}">Supprimer</button>
-      </div>
-    `;
-
-    container.appendChild(divProduit);
-
-  
-  });
+    <p>Total : ${(produit.prix * produit.quantite).toFixed(2)} €</p>
  
-  totalSpan.textContent = totalPrix.toFixed(2);
+    </div>
+`;
 
-  // Gestion modification quantité
-  const inputsQt = document.querySelectorAll(".quantite-input");
-  inputsQt.forEach(input => {
-    input.addEventListener("change", e => {
-      const idx = e.target.dataset.index;
-      let val = parseInt(e.target.value);
-      if (isNaN(val) || val < 1) val = 1;
-      e.target.value = val;
 
-      const panier = getPanier();
-      panier[idx].quantite = val;
-      setPanier(panier);
-      afficherPanier(); // Re-affiche pour mise à jour total & compteur
-    });
+    contenuPanier.appendChild(divProduit);
   });
 
-  // Gestion suppression produit
-  const btnsSuppr = document.querySelectorAll(".btn-supprimer");
-  btnsSuppr.forEach(btn => {
-    btn.addEventListener("click", e => {
-      const idx = e.target.dataset.index;
-      const panier = getPanier();
-      panier.splice(idx, 1);
-      setPanier(panier);
-      afficherPanier();
-    });
-  });
-
-  updateCompteur();
+  totalElement.textContent = total.toFixed(2);
 }
 
-// Vider le panier
-document.getElementById("vider-panier")?.addEventListener("click", () => {
-  if (confirm("Voulez-vous vraiment vider le panier ?")) {
-    localStorage.removeItem("panier");
+afficherPanier();
+
+
+contenuPanier.addEventListener('click', function(e) {
+  if (e.target.classList.contains('btn-plus')) {
+    const nom = e.target.getAttribute('data-nom');
+    const produit = panier.find(p => p.nom === nom);
+    produit.quantite++;
+    localStorage.setItem('panier', JSON.stringify(panier));
     afficherPanier();
   }
-});
-
-// Commander (juste une alerte pour prototype)
-document.getElementById("commander")?.addEventListener("click", () => {
-    window.location.href = "commande.html";
- /* alert("Merci pour votre commande ! (fonctionnalité prototype)");*/
-  localStorage.removeItem("panier");
-  /*afficherPanier();*/
-});
-
-// Exécuter quand le DOM est prêt
-document.addEventListener('DOMContentLoaded', () => {
   
-  const container = document.getElementById("panier-produit-list");
-  if (!container) {
-    alert("DIV panier-produit-list introuvable !");
-    return;
-  }
 
-  container.innerHTML = "<p>TEST OK - JS actif</p>";
-  afficherPanier();
+  if (e.target.classList.contains('btn-moins')) {
+    const nom = e.target.getAttribute('data-nom');
+    const produit = panier.find(p => p.nom === nom);
+    if (produit.quantite > 1) {
+      produit.quantite--;
+    } else {
+      // Supprimer le produit si quantité à 1 et qu'on clique sur -
+      const index = panier.indexOf(produit);
+      panier.splice(index, 1);
+    }
+    localStorage.setItem('panier', JSON.stringify(panier));
+    afficherPanier();
+  }
+   if (e.target.classList.contains('btn-supprimer')) {
+  const nom = e.target.getAttribute('data-nom');
+  const index = panier.findIndex(p => p.nom === nom);
+  if (index !== -1) {
+    panier.splice(index, 1);               // Supprime le produit du panier
+    localStorage.setItem('panier', JSON.stringify(panier));  // Met à jour localStorage
+    afficherPanier();                      // Réaffiche le panier à jour
+  }
+}
+
+});
+
+
+document.getElementById("commander")?.addEventListener("click", () => {
+  window.location.href = "commande.html";
 });
 

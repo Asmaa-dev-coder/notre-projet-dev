@@ -1,35 +1,44 @@
- const boutonsAjouter = document.querySelectorAll('.card-produit button');
+const boutonsAjouter = document.querySelectorAll('.card-produit button');
 const compteurPanier = document.getElementById('compteur-panier');
 
 // On récupère le panier existant (ou tableau vide si pas encore)
 let panier = JSON.parse(localStorage.getItem('panier')) || [];
 
 function mettreAJourCompteur() {
-  compteurPanier.textContent = panier.length;
+  const totalQt = panier.reduce((sum, p) => sum + (p.quantite || 1), 0);
+  compteurPanier.textContent = totalQt;
 }
 
 mettreAJourCompteur();
 
-boutonsAjouter.forEach((button, index) => {
+boutonsAjouter.forEach((button) => {
   button.addEventListener('click', () => {
-    // Récupère les infos du produit depuis la carte associée
     const carte = button.closest('.card-produit');
     const nom = carte.querySelector('h3').textContent;
-    const prix = carte.querySelector('.prix').textContent;
-    const imageSrc = carte.querySelector('img').src;
+    const prixTexte = carte.querySelector('.prix').textContent;
+    const prix = parseFloat(prixTexte.replace(',', '.').replace('€', '').trim());
+    const image = carte.querySelector('img').src;
+    const poids = carte.querySelector('.poids')?.textContent || "250g";
 
-    // Crée un objet produit
-    const produit = { nom, prix, imageSrc };
+    const produitExistant = panier.find(p => p.nom === nom);
 
-    // Ajoute au panier
-    panier.push(produit);
-
-    // Sauvegarde dans localStorage
+    if (produitExistant) {
+      // Si oui, on augmente la quantité
+      produitExistant.quantite += 1;
+    } else {
+      // Sinon on l'ajoute au panier
+      panier.push({
+        nom,
+        prix,
+        image,
+        poids,
+        quantite: 1
+      });
+    }
     localStorage.setItem('panier', JSON.stringify(panier));
-
-    // Met à jour compteur
     mettreAJourCompteur();
-
     alert("Produit ajouté au panier !");
   });
 });
+
+

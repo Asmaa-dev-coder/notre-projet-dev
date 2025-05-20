@@ -74,8 +74,8 @@
   
   }
   .hero-section {
-    background-image: url(../Styles/bianca-ackermann-ZHOmQ_0X6QQ-unsplash.jpg);
-    background-size:cover;
+    background-image: url(../Images/bianca-ackermann-ZHOmQ_0X6QQ-unsplash.jpg);
+       background-size:cover;
     background-position:center;
     background-attachment:fixed;
     padding: 60px 20px;

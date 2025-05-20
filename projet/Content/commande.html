@@ -1,57 +1,66 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Commande</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>commande</title>
   <link rel="stylesheet" href="commande.css" />
 </head>
 <body>
-  <header class="header">
-    <a href="#"><img src="../Images/logo.PNG" alt="Logo Miel et Miels"></a>
-    <nav class="nav-links">
-      <a href="produits.html">Nos Miels</a>
-      <a href="Recettes.html">Nos Recettes</a>
-      <a href="#">À Propos</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="nav-icons">
-      <i class="search-icon">🔍</i>
-      <i class="user-icon">👤</i>
-      <a href="panier.html" id="lien-panier" style="position: relative;">
-        🛒<span id="compteur-panier">0</span> 
-      </a>
-    </div>
-  </header>
+  <h1>Commande de miel</h1>
 
-  <main>
-    <h1>Validation de votre commande</h1>
-<section id="recapitulatif-panier" class="recap-panier">
-      <h2>Récapitulatif de votre panier</h2>
-      <ul id="liste-produits"></ul>
-      <p>Total : <span id="total-commande">0</span> €</p>
-    </section>
+  <form id="orderForm" novalidate>
+    <label for="nom">Nom *</label>
+    <input type="text" id="nom" name="nom" required />
+
+    <label for="prenom">Prénom *</label>
+    <input type="text" id="prenom" name="prenom" required />
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="adresse">Adresse complète *</label>
+    <textarea id="adresse" name="adresse" required></textarea>
+
     
-    <form id="form-commande" class="form-commande">
-      <fieldset>
-        <legend>Informations personnelles</legend>
-        <label>Nom : <input type="text" name="nom" required /></label>
-        <label>Prénom : <input type="text" name="prenom" required /></label>
-        <label>Email : <input type="email" name="email" required /></label>
-        <label>Téléphone : <input type="tel" name="telephone" required /></label>
-      </fieldset>
 
-      <fieldset>
-        <legend>Adresse de livraison</legend>
-        <label>Adresse : <input type="text" name="adresse" required /></label>
-        <label>Ville : <input type="text" name="ville" required /></label>
-        <label>Code postal : <input type="text" name="cp" required /></label>
-      </fieldset>
+    
 
-      <button type="submit">Valider la commande</button>
-    </form>
-  </main>
+    <label for="livraison">Livraison *</label>
+    <select id="livraison" name="livraison" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="standard" data-price="5.00">Livraison standard - 5,00€</option>
+      <option value="express" data-price="10.00">Livraison express - 10,00€</option>
+      <option value="retrait" data-price="0">Retrait en boutique - Gratuit</option>
+    </select>
 
-  <script src="commande.js"></script>
+    <label for="paiement">Paiement *</label>
+    <select id="paiement" name="paiement" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="cb">Carte bancaire</option>
+      <option value="paypal">PayPal</option>
+      <option value="virement">Virement bancaire</option>
+    </select>
+
+   <button type="submit">Valider la commande</button>
+
+  </form>
+
+  <div id="recap" style="display: none;">
+    <h2>Récapitulatif de la commande</h2>
+    <p><strong>Nom :</strong> <span id="recapNom"></span></p>
+    <p><strong>Prénom :</strong> <span id="recapPrenom"></span></p>
+    <p><strong>Email :</strong> <span id="recapEmail"></span></p>
+    <p><strong>Adresse :</strong> <span id="recapAdresse"></span></p>
+    
+    
+    <p><strong>Livraison :</strong> <span id="recapLivraison"></span></p>
+    <p><strong>Paiement :</strong> <span id="recapPaiement"></span></p>
+    <div id="recapProduit"></div>
+    <p><strong>Total à payer :</strong> <span id="recapTotal"></span> €</p>
+  </div>
+<script src="commande.js"></script>
+
+
 </body>
 </html>

@@ -1,41 +1,81 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const panier = JSON.parse(localStorage.getItem("panier")) || [];
-  const listeProduits = document.getElementById("liste-produits");
-  const totalSpan = document.getElementById("total-commande");
+window.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById('orderForm');
+  const recap = document.getElementById('recap');
 
-  let total = 0;
-  panier.forEach(produit => {
-    const li = document.createElement("li");
-    li.textContent = `${produit.nom} x${produit.quantite} – ${produit.prix * produit.quantite} €`;
-    listeProduits.appendChild(li);
-    total += produit.prix * produit.quantite;
-  });
+  function afficherProduitsDansCommande() {
+    const panier = JSON.parse(localStorage.getItem('panier')) || [];
+    const recapProduit = document.getElementById('recapProduit');
 
-  totalSpan.textContent = total.toFixed(2);
+    if (!recapProduit) return;
 
+    if (panier.length === 0) {
+      recapProduit.innerHTML = "<p>Aucun produit dans le panier.</p>";
+      return;
+    }
 
-
-
-document.getElementById("form-commande").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const panier = localStorage.getItem("panier");
-  if (!panier || JSON.parse(panier).length === 0) {
-    alert("Votre panier est vide !");
-    return;
+    recapProduit.innerHTML = panier.map(p => {
+      const prixUnitaire =  Number(p.prix) || 0;
+      const quantite = p.quantite || 1;
+      const total = (prixUnitaire * quantite).toFixed(2);
+      return `<div>${p.nom} x ${quantite} = ${total} €</div>`;
+    }).join('');
   }
 
-  // Tu peux ici récupérer les infos du formulaire
-  const formData = new FormData(this);
-  const nom = formData.get("nom");
-  const prenom = formData.get("prenom");
+  function updateRecap() {
+    const nom = form.nom.value.trim();
+    const prenom = form.prenom.value.trim();
+    const email = form.email.value.trim();
+    const adresse = form.adresse.value.trim();
 
-  // Exemple : afficher un message de confirmation
-  alert(`Commande validée ! ${prenom} ${nom}, Merci pour votre achat 🍯`);
+    const livraisonOption = form.livraison.options[form.livraison.selectedIndex];
+    const livraison = livraisonOption ? livraisonOption.text : '';
+    const prixLivraison = livraisonOption ? parseFloat(livraisonOption.dataset.price) || 0 : 0;
 
-  // Vider le panier
-  localStorage.removeItem("panier");
+    const paiementOption = form.paiement.options[form.paiement.selectedIndex];
+    const paiement = paiementOption ? paiementOption.text : '';
 
-  // Rediriger si tu veux
-  window.location.href = "produits.html";
+    const panier = JSON.parse(localStorage.getItem('panier')) || [];
+    let totalProduits = 0;
+    panier.forEach(p => {
+      const prixUnitaire = parseFloat(p.prix) || 0;
+
+      totalProduits += prixUnitaire * (p.quantite || 1);
+    });
+
+    const total = (totalProduits + prixLivraison).toFixed(2);
+
+    document.getElementById('recapNom').textContent = nom || '-';
+    document.getElementById('recapPrenom').textContent = prenom || '-';
+    document.getElementById('recapEmail').textContent = email || '-';
+    document.getElementById('recapAdresse').textContent = adresse || '-';
+    document.getElementById('recapLivraison').textContent = livraison || '-';
+    document.getElementById('recapPaiement').textContent = paiement || '-';
+    document.getElementById('recapTotal').textContent = total;
+
+    afficherProduitsDansCommande();
+
+    // Affiche le récap seulement si tout est rempli
+    if (nom && prenom && email && adresse && livraison && paiement) {
+      recap.style.display = 'block';
+    }
+  }
+
+  form.addEventListener('input', updateRecap);
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // empêche le rechargement
+
+    if (!form.checkValidity()) {
+      alert('Merci de remplir tous les champs obligatoires.');
+      return;
+    }
+
+    updateRecap();
+
+    alert(`Merci pour votre commande, ${form.prenom.value} !\nTotal : ${document.getElementById('recapTotal').textContent} €`);
+
+    localStorage.removeItem("panier"); // vide le panier
+    form.reset();
+    recap.style.display = 'none';
+  });
 });
