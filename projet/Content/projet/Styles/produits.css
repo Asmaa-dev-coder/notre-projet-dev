@@ -1,0 +1,514 @@
+.logo-img{
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+    
+  
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.7em;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  } 
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffcff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header img {
+    height: 40px;
+  }
+  /*.nav-links{
+    margin: 0 15px;
+    text-decoration: none;
+    color: #5c4200;
+    font-weight: 500;
+    position: relative;
+  }
+  .nav-links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #b68100;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+  }
+  .nav-links:hover::after {
+    width: 100%;
+  }*/
+  
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    font-size: 14px;
+  }
+  
+  .nav-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-icons i {
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  
+  
+  /*.logo-img{
+      width: 50%;
+      height: auto;
+      display: block;
+      
+  
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      
+    }
+    
+    .header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      
+    }
+    
+    .header img {
+      height: 50px;
+    }
+    
+    .nav-links {
+      display: flex;
+      flex: 1;    
+     justify-content: center;
+     align-items: center;
+     gap: 30px; 
+    }
+    
+    .nav-links a {
+      color: rgb(145, 127, 23);
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      
+    }
+    
+    .nav-icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .nav-icons i {
+      font-size: 18px;
+      cursor: pointer;
+    }*/
+      .titre-page {
+    text-align: center;
+    font-size: 32px;
+    margin: 40px 0 20px;
+    color: #a67628;
+  
+  }
+  .hero-section {
+background-image: url('../Styles/bianca-ackermann-ZHOmQ_0X6QQ-unsplash.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: white
+    ; 
+    position: relative;
+  }
+  .titre-page, .subtitle{
+    position: relative;
+    z-index: 1;
+  }
+  .hero-section hover {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 1), rgba(255, 152, 0, 1));
+  }
+  .titre-page {
+    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: wheat;
+    margin: 40px 0 20px;
+  }
+  
+  .subtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+  }
+  
+  /*produits*/
+  /*.produit-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+  }*/
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  
+  }
+  
+  .titre-principal {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #6b4e20;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-divider {
+    width: 80px;
+    height: 3px;
+    background-color: #d2ae52;
+    margin: 15px auto 0;
+  }
+  
+  .discription-produit {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+  }
+  
+  .sous-titre {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: #6b4e20;
+    margin: 25px 0 15px;
+  }
+  
+  .description-text {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+  }
+  .produits {
+    padding: 40px 50px;
+  }
+  
+  .produit-section {
+    margin-bottom: 50px;
+    max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  }
+  /*
+  .produit-section h3 {
+    font-size: 2em;
+    color: #fca417;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right, #fda40b,#FFCA28);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s  ease-in-out, color 0.3s ease-in-out;
+  }
+  .produit-section h4{
+    font-size: medium;
+    color: #6f4605;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 10px 0;
+    box-shadow: #555;
+    border-radius: 5px;
+  }
+  .discription-produit {
+    background: url('projet/Images/800_600_img_2002.jpg') no-repeat center center;
+
+    background-size: cover;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0, 0.1);
+  color: #fff;
+position: relative;
+z-index: 1;  }
+.discription-produit::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 247, 225, 0.85); /* filtre miel pâle */
+  border-radius: 15px;
+  z-index: -1;
+}
+
+/*.discription-produit h4 {
+  font-size: 22px;
+  color: #5C3B1E;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-family: 'Georgia', serif;
+  border-left: 4px solid #D1A75F;
+  padding-left: 10px;
+}
+
+.discription-produit p {
+  font-size: 16px;
+  color: #4B3621;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 15px;
+  font-family: 'Segoe UI', sans-serif;
+} */
+  
+
+  /*.produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .card-produit {
+    background-color: #fffaf0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .card-produit img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  */
+  .card-produit h3 {
+    font-family: arial , sans serif;
+    text-align: center;
+    margin: 15px 0 5px;
+    color: #7a4e0d;
+  }
+  
+  .card-produit p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 0 15px;
+    color: #555;
+  }
+  .card-produit .prix {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #b88e0e;
+    margin: 10px 0;
+  }
+  
+  .card-produit button {
+    background-color: #f0b622;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+  }
+  
+  .card-produit button:hover {
+    background-color: #d89b00;
+
+  }
+  
+  .produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+  }
+  
+  .card-produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   background-color: #FFF3E0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+  }
+  .card-produit:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+  
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card-produit.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card-produit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-image-container {
+    position: relative;
+    height: 200px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .card-produit img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .produits {
+      padding: 20px;
+    }
+  
+    .produits-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  /* Style pour l'image en bas de la page */
+.image-bas {
+  position: relative; /* Espace entre les produits et l'image */
+  text-align: center; /* Centrer l'image horizontalement */
+}
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  background-color: rgba(0,0,0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+.overlay h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+
+}
+.overlay p {
+  font-size: 1.2em;
+
+}
+.btn-overlay {
+  background-color: #FF5733;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+.btn-overlay: hover {
+  background-color: #FF5733
+}
+
+/*.image-pied-page {
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; */
+  #message-panier {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+  }
+  #compteur-panier {
+   
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: #f39c12;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+  }
+  .prix {
+    font-weight: bold;
+    color: #f39c12;
+  }
