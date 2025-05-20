@@ -186,59 +186,8 @@
     <img src="../Images/Bannière-France-Miel-1.png" alt="Image de Miel" class="image-pied-page">
   </div>
 
-  <div id="compteur-panier">0</div>
-  <div id="message-panier"></div>
   
-  <script>
-   function majCompteur() {
-  const compteur = document.getElementById("compteur-panier");
-  const panier = JSON.parse(localStorage.getItem("panier")) || [];
-  if (compteur) {
-    compteur.innerText = panier.length;
-  }
-}
-   document.addEventListener('DOMContentLoaded', () => {
-      majCompteur();
+<script src="produits.js"></script>
 
-
-      const buttons = document.querySelectorAll('.card-produit button');
-      const message = document.getElementById('message-panier');
-      const compteur = document.getElementById('compteur-panier');
-
-
-    buttons.forEach(button => {
-       button.addEventListener('click', () => {
-          const card = button.closest('.card-produit');
-          const titre = card.querySelector('h3').innerText;
-          const prix = card.querySelector('.prix').innerText;
-          const produit = { 
-
-                 nom: titre,            // ou card.querySelector('h3').textContent
-                 prix: parseFloat(prix.replace('€', '').replace(',', '.')),
-                 image: card.querySelector('img').getAttribute('src')
-            };
-
-          let panier = JSON.parse(localStorage.getItem('panier')) || [];
-          panier.push(produit);
-          localStorage.setItem('panier', JSON.stringify(panier));
-
-          message.innerText = `"${titre}" ajouté au panier !`;
-          message.style.display = 'block';
-
-          setTimeout(() => {
-            message.style.display = 'none';
-          }, 2000);
-
-          majCompteur();
-        });
-      });
-    }); 
-    
-  </script>
-
-
-
-  
-    
 </body>
 </html>

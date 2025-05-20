@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="panier.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panier - Miel et Miels</title>
+  <link rel="stylesheet" href="panier.css" />
 </head>
 <body>
-    <header>
-        <h1>Votre Panier</h1>
-       <p>Articles dans le panier : <span id="compteur-panier">0</span></p> 
-      </header>
-    
-      
-        <div id="panier-container">
-         </div>
-         <p id="total"></p>
-        
-      
-    
-      <script src="panier.js"></script>    
+  <header class="header">
+    <a href="#"><img src="../Images/logo.PNG" alt="Logo Miel et Miels"></a>
+    <nav class="nav-links">
+      <a href="produits.html">Nos Miels</a>
+      <a href="Recettes.html">Nos Recettes</a>
+      <a href="#">À Propos</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <i class="search-icon">🔍</i>
+      <i class="user-icon">👤</i>
+      <a href="panier.html" id="lien-panier" style="position: relative;">
+        🛒<span id="compteur-panier">0</span> 
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Votre Panier</h1>
+    <div id="panier-vide" style="display:none;">
+      <p>Votre panier est vide.</p>
+      <a href="produits.html" class="btn-retour">Retour aux produits</a>
+    </div>
+
+    <div id="panier-produit-list"></div>
+
+    <div id="panier-total-container" style="display:none;">
+      <h2>Total : <span id="panier-total">0</span> €</h2>
+      <button id="vider-panier" class="btn-vider">Vider le panier</button>
+      <button id="commander" class="btn-commander">Passer la commande</button>
+    </div>
+  </main>
+
+  <script src="panier.js"></script>
 </body>
 </html>
+
+
+
