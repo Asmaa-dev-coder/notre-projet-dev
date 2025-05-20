@@ -1,5 +1,4 @@
-console.log("panier.js chargé !");
-alert("panier.js bien exécuté !");
+
 
 
 // Récupérer le panier dans localStorage (tableau d'objets produits)
@@ -28,9 +27,9 @@ function updateCompteur() {
 // Afficher le panier
 function afficherPanier() {
   const panier = getPanier();
-  console.log("Panier chargé :", panier);
+  
   const container = document.getElementById("panier-produit-list");
-  container.innerHTML = "<p>TEST OK - PANIER</p>";
+  
 
   const panierVide = document.getElementById("panier-vide");
   const totalContainer = document.getElementById("panier-total-container");
@@ -52,7 +51,7 @@ function afficherPanier() {
     panierVide.style.display = "none";
     totalContainer.style.display = "block";
   }
-
+  let totalPrix = 0;
   
 
   panier.forEach((produit, index) => {
@@ -77,7 +76,7 @@ function afficherPanier() {
 
   
   });
- updateCompteur();
+ 
   totalSpan.textContent = totalPrix.toFixed(2);
 
   // Gestion modification quantité
@@ -121,9 +120,10 @@ document.getElementById("vider-panier")?.addEventListener("click", () => {
 
 // Commander (juste une alerte pour prototype)
 document.getElementById("commander")?.addEventListener("click", () => {
-  alert("Merci pour votre commande ! (fonctionnalité prototype)");
+    window.location.href = "commande.html";
+ /* alert("Merci pour votre commande ! (fonctionnalité prototype)");*/
   localStorage.removeItem("panier");
-  afficherPanier();
+  /*afficherPanier();*/
 });
 
 // Exécuter quand le DOM est prêt

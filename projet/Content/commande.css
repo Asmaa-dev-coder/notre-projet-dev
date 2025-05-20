@@ -1,0 +1,133 @@
+.logo-img{
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+    
+  
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.7em;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  } 
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header img {
+    height: 40px;
+  }
+ 
+  
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    font-size: 14px;
+  }
+  
+  .nav-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-icons i {
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Style général */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fffdf5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titre principal */
+main h1 {
+  text-align: center;
+  font-size: 2em;
+  margin: 2rem 0;
+  color: #8b4513;
+}
+
+/* Formulaire */
+.form-commande {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Fieldsets */
+.form-commande fieldset {
+  border: 2px solid #d4aa00;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+}
+
+/* Légendes */
+.form-commande legend {
+  font-weight: bold;
+  color: #a16900;
+  padding: 0 0.5rem;
+}
+
+/* Étiquettes */
+.form-commande label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Champs de formulaire */
+.form-commande input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
+
+/* Bouton */
+.form-commande button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #d4aa00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-commande button:hover {
+  background-color: #b38800;
+}

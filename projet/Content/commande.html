@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commande</title>
+  <link rel="stylesheet" href="commande.css" />
 </head>
 <body>
+  <header class="header">
+    <a href="#"><img src="../Images/logo.PNG" alt="Logo Miel et Miels"></a>
+    <nav class="nav-links">
+      <a href="produits.html">Nos Miels</a>
+      <a href="Recettes.html">Nos Recettes</a>
+      <a href="#">À Propos</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <i class="search-icon">🔍</i>
+      <i class="user-icon">👤</i>
+      <a href="panier.html" id="lien-panier" style="position: relative;">
+        🛒<span id="compteur-panier">0</span> 
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Validation de votre commande</h1>
+<section id="recapitulatif-panier" class="recap-panier">
+      <h2>Récapitulatif de votre panier</h2>
+      <ul id="liste-produits"></ul>
+      <p>Total : <span id="total-commande">0</span> €</p>
+    </section>
     
+    <form id="form-commande" class="form-commande">
+      <fieldset>
+        <legend>Informations personnelles</legend>
+        <label>Nom : <input type="text" name="nom" required /></label>
+        <label>Prénom : <input type="text" name="prenom" required /></label>
+        <label>Email : <input type="email" name="email" required /></label>
+        <label>Téléphone : <input type="tel" name="telephone" required /></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Adresse de livraison</legend>
+        <label>Adresse : <input type="text" name="adresse" required /></label>
+        <label>Ville : <input type="text" name="ville" required /></label>
+        <label>Code postal : <input type="text" name="cp" required /></label>
+      </fieldset>
+
+      <button type="submit">Valider la commande</button>
+    </form>
+  </main>
+
+  <script src="commande.js"></script>
 </body>
 </html>
