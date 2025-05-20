@@ -7,20 +7,39 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <header class="header">
-    <a href="#"><img src="../projet/Images/logo.PNG"></a>
-        <nav class="nav-links">
-          <a href="Content/produits.html">Nos Miels</a>
-          <a href="Content/Recettes.html"> Nos Recettes</a>
-          <a href="#">A Propos</a>
-          <a href="#">Contact</a>
-           
-        </nav>
-        <div class="nav-icons">
-          <i class="search-icon">🔍</i>
-          <i class="user-icon">👤</i>
-          <i class="cart-icon">🛒</i>
-        </div>
-      </header>
-      
+      <!-- Menu Hamburger (mobile) -->
+  <nav role="navigation" id="menu-mobile">
+    <div id="menuToggle">
+      <input type="checkbox" id="menuCheckbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <li><a href="#accueil"><label for="menuCheckbox">Accueil</label></a></li>
+        <li><a href="#miels"><label for="menuCheckbox">Miels</label></a></li>
+        <li><a href="#recettes"><label for="menuCheckbox">Recettes</label></a></li>
+        <li><a href="#apropos"><label for="menuCheckbox">À propos</label></a></li>
+        <li><a href="#contact"><label for="menuCheckbox">Contact</label></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Menu Desktop -->
+  <nav class="nav-desktop">
+    <div class="logo">
+      <img src="images/Logo_MieletMiels.jpg" alt="Logo du site" />
+    </div>
+    <div class="links">
+      <a href="#accueil">Accueil</a>
+      <a href="#miels">Miels</a>
+      <a href="#recettes">Recettes</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <input type="text" placeholder="Rechercher..." />
+      <i class="fas fa-user"></i>
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+  </nav>
 </body>
