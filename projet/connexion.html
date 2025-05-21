@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="../style/connexion.css">
+</head>
+<body>
+  <form>
+    <div class="logo">
+      <img src="../images/Logo_MieletMiels_Bis.jpg" alt="Logo">
+    </div>
+    <div class="inputs">
+      <input type="email" placeholder="Email" required>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+      </div>
+      <div class="forgot"><u>Mot de passe oublié ?</u></div>
+    </div>
+    <button type="submit">Se connecter</button>
+    <p class="inscription">Vous n'avez pas de compte ? <span><u>S'inscrire</u></span>.</p>
+    <div class="separator">ou</div>
+    <button type="button" class="btn-facebook">
+      <i class="fab fa-facebook-f"></i> Continuer avec Facebook
+    </button>
+    <button type="button" class="btn-google">
+      <i class="fab fa-google"></i> Continuer avec Google
+    </button>
+  </form>
+
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    togglePassword.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      togglePassword.classList.toggle('fa-eye');
+      togglePassword.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+</html>

@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miel et Miels</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site de Miel</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style/index.css" />
 </head>
 <body>
-      <!-- Menu Hamburger (mobile) -->
+
+<header>
+  <!-- Menu Hamburger (mobile) -->
   <nav role="navigation" id="menu-mobile">
+    
     <div id="menuToggle">
+      <!-- Checkbox cachée pour déclencher le menu -->
       <input type="checkbox" id="menuCheckbox" />
+  
       <span></span>
       <span></span>
       <span></span>
+  
       <ul id="menu">
-        <li><a href="#accueil"><label for="menuCheckbox">Accueil</label></a></li>
-        <li><a href="#miels"><label for="menuCheckbox">Miels</label></a></li>
-        <li><a href="#recettes"><label for="menuCheckbox">Recettes</label></a></li>
-        <li><a href="#apropos"><label for="menuCheckbox">À propos</label></a></li>
-        <li><a href="#contact"><label for="menuCheckbox">Contact</label></a></li>
+        <li><a href="#accueil"><label for="menuCheckbox" onclick="this.parentNode.click();">Accueil</label></a></li>
+        <li><a href="#miels"><label for="menuCheckbox" onclick="this.parentNode.click();">Miels</label></a></li>
+        <li><a href="#recettes"><label for="menuCheckbox" onclick="this.parentNode.click();">Recettes</label></a></li>
+        <li><a href="#apropos"><label for="menuCheckbox" onclick="this.parentNode.click();">À propos</label></a></li>
+        <li><a href="#contact"><label for="menuCheckbox" onclick="this.parentNode.click();">Contact</label></a></li>
       </ul>
     </div>
+
+    <div class="logo-mobile">
+      <img src="images/Logo_MieletMiels.jpg" alt="Logo du site" />
+    </div>
+
+    <div class="nav-icons-mobile">
+      <i class="fas fa-user"></i>
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+
   </nav>
+  
 
   <!-- Menu Desktop -->
   <nav class="nav-desktop">
@@ -42,4 +60,29 @@
       <i class="fas fa-shopping-cart"></i>
     </div>
   </nav>
+
+</header>
+
+<!-- Sections principales -->
+<!--<section id="accueil">
+  <h2>Accueil</h2>
+</section>
+
+<section id="miels">
+  <h2>Miels</h2>
+</section>
+
+<section id="recettes">
+  <h2>Recettes</h2>
+</section>
+
+<section id="apropos">
+  <h2>À propos</h2>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+</section>
+-->
 </body>
+</html>
