@@ -4,32 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miel et Miels</title>
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="produits.css">
     
 </head>
 <body>
   
+<header>
+  <!-- Menu Hamburger (mobile) -->
+  <nav role="navigation" id="menu-mobile">
+    
+    <div id="menuToggle">
+      <!-- Checkbox cachée pour déclencher le menu -->
+      <input type="checkbox" id="menuCheckbox" />
+  
+      <span></span>
+      <span></span>
+      <span></span>
+  
+      <ul id="menu">
+        <li><a href="#accueil"><label for="menuCheckbox" onclick="this.parentNode.click();">Accueil</label></a></li>
+        <li><a href="../projet/Content/produits.html"><label for="menuCheckbox" onclick="this.parentNode.click();">Miels</label></a></li>
+        <li><a href="#recettes"><label for="menuCheckbox" onclick="this.parentNode.click();">Recettes</label></a></li>
+        <li><a href="#apropos"><label for="menuCheckbox" onclick="this.parentNode.click();">À propos</label></a></li>
+        <li><a href="#contact"><label for="menuCheckbox" onclick="this.parentNode.click();">Contact</label></a></li>
+      </ul>
+    </div>
 
+    <div class="logo-mobile">
+      <img src="../Images/Logo_MieletMiels.jpg" alt="Logo du site" />
+    </div>
+
+    <div class="nav-icons-mobile">
+       <i class="fas fa-user"></i>
+      <i class="fas fa-shopping-cart"></i>
+      <span id="compteur-panier" class="compteur">0</span>
+    </div>
+
+  </nav>
   
-    <header class="header">
-        <a href="#"><img src="../Images/logo.PNG"></a>
-            <nav class="nav-links">
-              <a href="produits.html">Nos Miels</a>
-              <a href="Recettes.html"> Nos Recettes</a>
-              <a href="#">A Propos</a>
-              <a href="#">Contact</a>
-               
-            </nav>
-            <div class="nav-icons">
-              <i class="search-icon">🔍</i>
-              <i class="user-icon">👤</i>
-              <a href="panier.html" id="lien-panier" style="position: relative;">
-              🛒<span id="compteur-panier">0</span> 
+
+  <!-- Menu Desktop -->
+  <nav class="nav-desktop">
+    <div class="logo">
+      <img src="../Images/Logo_MieletMiels.jpg" alt="Logo du site" />
+    </div>
+    <div class="links">
+      <a href="../index.html">Accueil</a>
+      <a href="../projet/Content/produits.html">Miels</a>
+      <a href="#recettes">Recettes</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <input type="text" placeholder="Rechercher..." />
+      <i class="fas fa-user"></i>
+      <a href="../Content/panier.html" class="panier-wrapper" style="position:relative ;">
+      <i class="fas fa-shopping-cart"></i>
+     <span id="compteur-panier-desktop" class="compteur">0</span>
+      </a> </div>
+  </nav>
+
+</header>
   
-              </a>
-            </div>
-          </header>
           <main>
           <section class="hero-section">
             <h1 class="titre-page">Nos Miels</h1>

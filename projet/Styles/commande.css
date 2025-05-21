@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: flex-start; /* au lieu de center pour que ça parte du haut */
   align-items: center;
+  background: linear-gradient(135deg, #fceabb, #ffc830d8, #fceabb);
   
 }
 
