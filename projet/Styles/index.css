@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  height: 40vh;
+  height: auto;
   color: #fff;
   text-align: center;
   position: relative;
@@ -26,6 +26,7 @@ header {
   padding: 20px;
   background-color: #fff;
   color: #000;
+  border-bottom: 1px solid #ddd;
 }
 
 .nav-desktop .logo img {
@@ -49,8 +50,12 @@ header {
 }
 
 .nav-desktop .nav-icons input {
-  padding: 5px;
+  padding: 6px 12px;
   margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 999px; 
+  outline: none;
+  font-size: 14px;
 }
 
 .nav-desktop .nav-icons i {
@@ -63,9 +68,10 @@ header {
 /* -------- NAVIGATION MOBILE -------- */
 #menu-mobile {
   display: block;
-  position: relative; /* pour que logo-mobile se place bien */
+  position: relative; 
   padding-top: 20px; /* espace sous le hamburger */
   text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
 .logo-mobile img {
@@ -94,8 +100,8 @@ header {
 #menuToggle {
   display: block;
   position: fixed;
-  top: 20px;      /* ajusté pour coller à ton header */
-  left: 10px;     /* décalé un peu plus à gauche */
+  top: 20px;      
+  left: 10px;    
   z-index: 999;
 
   -webkit-user-select: none;
@@ -118,9 +124,9 @@ header {
   height: 32px;
   position: absolute;
   top: -7px;
-  left: -15px;   /* débordement à gauche plus important */
+  left: -15px;  
   cursor: pointer;
-  opacity: 0;    /* input invisible */
+  opacity: 0;    
   z-index: 2;
   -webkit-touch-callout: none;
 }
@@ -204,16 +210,90 @@ header {
 }
 
 
-/* -------- SECTIONS -------- */
-/*section {
-  padding: 100px 20px;
-  background: #f5f5f5;
-  border-bottom: 1px solid #ddd;
+
+/* Section a propos*/
+.apropos-section {
+  padding: 60px 20px;
+  background-color: #fffbee;
+  color: #333;
+  font-family: 'Nunito', sans-serif;
 }
 
-section h2 {
-  margin-top: 0;
-}*/
+.apropos-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.apropos-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-top: 40px;
+  color: #5a4300;
+}
+
+.apropos-container p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-top: 10px;
+  color: #333;
+}
+
+
+/* Section Contact */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #fcfff4; 
+  color: #333;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 20px 0;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.contact-info a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
+.contact-info i {
+  color: #d4af37;  
+  margin-right: 12px;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+
+
 
 /* -------- RESPONSIVE -------- */
 @media screen and (min-width: 769px) {
@@ -225,3 +305,4 @@ section h2 {
     display: flex; /* Afficher menu desktop sur grand écran */
   }
 }
+
