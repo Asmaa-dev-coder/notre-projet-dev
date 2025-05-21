@@ -1,17 +1,27 @@
  body {
-      font-family: Arial, sans-serif;
-      background-color: #fffbee;
-      color: #5a3b00;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  background-color: #fffbee;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* au lieu de center pour que ça parte du haut */
+  align-items: center;
+  
+}
+
     h1 {
-      margin-bottom: 20px;
+      text-align: center; color: #8B5E3C;
+       font-family: 'Segoe UI', sans-serif;
+
+      margin-top: 70px;
+      text-align: center;
     }
     form {
+      background-image: url(../Images/jocelyn-morales-nKMGJAy3Qps-unsplash.jpg);
+           background-repeat: no-repeat;          /* pour pas qu’elle se répète */
+  background-position: center;           /* la centrer */
+  background-size: cover;
       background-color: #fff8dc;
       padding: 20px;
       border-radius: 8px;
@@ -74,3 +84,147 @@
     #recap p {
       margin: 8px 0;
     }
+    
+.notification-vol-abeille {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: #fff8e1;
+  border: 2px solid #ffb300;
+  padding: 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(255, 179, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 10000;
+  overflow: visible;
+  user-select: none;
+}
+
+.notification-vol-abeille.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.notification-vol-abeille .message {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #6d4c41;
+  text-align: center;
+}
+
+.notification-vol-abeille .abeilles {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 15px auto 0 auto;
+}
+
+.abeille {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #fdd835 0%, #fbc02d 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: inset -2px 0 #f57c00;
+  filter: drop-shadow(0 0 1px #b76e00);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+}
+
+.abeille1 {
+  top: 50%; left: 50%;
+  animation-name: vol-abeille1;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform-origin: -30px 0;
+}
+
+.abeille2 {
+  top: 50%; left: 50%;
+  animation-name: vol-abeille2;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  transform-origin: -40px 0;
+}
+
+.abeille3 {
+  top: 50%; left: 50%;
+  animation-name: vol-abeille3;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+  transform-origin: -35px 0;
+}
+
+@keyframes vol-abeille1 {
+  0% { transform: rotate(0deg) translateX(30px) rotate(0deg);}
+  100% { transform: rotate(360deg) translateX(30px) rotate(-360deg);}
+}
+@keyframes vol-abeille2 {
+  0% { transform: rotate(0deg) translateX(40px) rotate(0deg);}
+  100% { transform: rotate(-360deg) translateX(40px) rotate(360deg);}
+}
+@keyframes vol-abeille3 {
+  0% { transform: rotate(0deg) translateX(35px) rotate(0deg);}
+  100% { transform: rotate(360deg) translateX(35px) rotate(-360deg);}
+}
+
+.abeille.s-envole {
+  animation-name: s-envole;
+  animation-duration: 1s !important;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  transform-origin: center;
+}
+
+@keyframes s-envole {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(100px, -150px) scale(0.1); }
+}
+
+.commande-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+  position: relative;
+}
+
+/* Icône abeille à gauche */
+.abeille-gauche {
+  width: 60px;
+  height: auto;
+  animation: voleAbeille 4s infinite ease-in-out;
+}
+
+/* Icône pot de miel à droite */
+.pot-miel-droite {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+  animation: voleAbeille 4s infinite
+}
+
+/* Animation abeille qui bouge */
+@keyframes voleAbeille {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.abeille-bas-droite {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  animation: voleAbeille 6s infinite reverse;
+}
+.abeille-bas-gauche {
+  position: absolute;
+  bottom: 20px;
+  left: 60px;
+  width: 45px;
+  animation: voleAbeille 4s infinite;
+}

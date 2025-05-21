@@ -341,3 +341,25 @@
     font-weight: bold;
     color: #f39c12;
   }
+ 
+
+.notification-panier {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(20px);
+  z-index: 1000;
+}
+.notification-panier.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

@@ -7,9 +7,16 @@
   <link rel="stylesheet" href="commande.css" />
 </head>
 <body>
-  <h1>Commande de miel</h1>
+  <h1> Finalisation de votre commande</h1>
+ <div class="commande-wrapper">
+  <!-- Icône abeille à gauche -->
+<img src="bee.png" alt="Abeille" class="abeille-gauche" />
+<img src="flower.png" class="abeille-bas-droite" alt="Abeille" />
+<img src="sweet.png" class="abeille-bas-gauche" alt="Abeille" />
 
-  <form id="orderForm" novalidate>
+  
+
+<form id="orderForm" novalidate>
     <label for="nom">Nom *</label>
     <input type="text" id="nom" name="nom" required />
 
@@ -45,6 +52,8 @@
    <button type="submit">Valider la commande</button>
 
   </form>
+  <img src="honey.png" alt="Pot de miel" class="pot-miel-droite" />
+  </div>
 
   <div id="recap" style="display: none;">
     <h2>Récapitulatif de la commande</h2>
@@ -59,6 +68,10 @@
     <div id="recapProduit"></div>
     <p><strong>Total à payer :</strong> <span id="recapTotal"></span> €</p>
   </div>
+
+
+
+
 <script src="commande.js"></script>
 
 

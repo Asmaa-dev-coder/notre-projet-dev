@@ -11,6 +11,23 @@ function mettreAJourCompteur() {
 
 mettreAJourCompteur();
 
+// ✅ Fonction pour afficher un message stylé
+function afficherMessage(message) {
+  const notif = document.createElement("div");
+  notif.className = "notification-panier";
+  notif.textContent = message;
+  document.body.appendChild(notif);
+
+  setTimeout(() => {
+    notif.classList.add("visible");
+  }, 10);
+
+  setTimeout(() => {
+    notif.classList.remove("visible");
+    setTimeout(() => notif.remove(), 300);
+  }, 2000);
+}
+
 boutonsAjouter.forEach((button) => {
   button.addEventListener('click', () => {
     const carte = button.closest('.card-produit');
@@ -23,10 +40,8 @@ boutonsAjouter.forEach((button) => {
     const produitExistant = panier.find(p => p.nom === nom);
 
     if (produitExistant) {
-      // Si oui, on augmente la quantité
       produitExistant.quantite += 1;
     } else {
-      // Sinon on l'ajoute au panier
       panier.push({
         nom,
         prix,
@@ -35,10 +50,9 @@ boutonsAjouter.forEach((button) => {
         quantite: 1
       });
     }
+
     localStorage.setItem('panier', JSON.stringify(panier));
     mettreAJourCompteur();
-    alert("Produit ajouté au panier !");
+    afficherMessage("Produit ajouté au panier !");
   });
 });
-
-

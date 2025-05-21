@@ -1,3 +1,37 @@
+function afficherMessageVolAbeille() {
+  const message = "Merci d’avoir choisi notre miel, que douceur et bonheur accompagnent votre dégustation !";
+
+  const notif = document.createElement("div");
+  notif.className = "notification-vol-abeille";
+  notif.innerHTML = `
+    <div class="message">${message}</div>
+    <div class="abeilles">
+      <div class="abeille abeille1"></div>
+      <div class="abeille abeille2"></div>
+      <div class="abeille abeille3"></div>
+    </div>
+  `;
+
+  document.body.appendChild(notif);
+
+  // Animation apparition
+  setTimeout(() => notif.classList.add("visible"), 10);
+
+  // Disparition + abeilles s'envolent après 4s
+  setTimeout(() => {
+    notif.classList.remove("visible");
+    notif.querySelectorAll('.abeille').forEach((abeille, i) => {
+      abeille.classList.add('s-envole');
+      abeille.style.animationDelay = `${i * 0.3}s`;
+    });
+    setTimeout(() => notif.remove(), 4500);
+  }, 4000);
+}
+
+
+
+
+
 window.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById('orderForm');
   const recap = document.getElementById('recap');
@@ -72,7 +106,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     updateRecap();
 
-    alert(`Merci pour votre commande, ${form.prenom.value} !\nTotal : ${document.getElementById('recapTotal').textContent} €`);
+    afficherMessageVolAbeille();
+
+
+
 
     localStorage.removeItem("panier"); // vide le panier
     form.reset();
