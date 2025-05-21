@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="../style/inscription.css">
+</head>
+<body>
+  <form>
+    <div class="logo">
+      <img src="../images/Logo_MieletMiels_Bis.jpg" alt="Logo">
+    </div>
+    <div class="inputs">
+      <input type="text" placeholder="Nom d'utilisateur" required>
+      <input type="email" placeholder="Email" required>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+      </div>
+      <div class="password-container">
+        <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required>
+        <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
+      </div>
+    </div>
+    <button type="submit">S'inscrire</button>
+    <p class="connexion">Vous avez déjà un compte ? <span><u>Se connecter</u></span>.</p>
+    <div class="separator">ou</div>
+    <button type="button" class="btn-facebook">
+      <i class="fab fa-facebook-f"></i> Continuer avec Facebook
+    </button>
+    <button type="button" class="btn-google">
+      <i class="fab fa-google"></i> Continuer avec Google
+    </button>
+  </form>
+
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+
+    togglePassword.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      togglePassword.classList.toggle('fa-eye');
+      togglePassword.classList.toggle('fa-eye-slash');
+    });
+
+    toggleConfirmPassword.addEventListener('click', () => {
+      const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      confirmPasswordInput.setAttribute('type', type);
+      toggleConfirmPassword.classList.toggle('fa-eye');
+      toggleConfirmPassword.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+</html>
