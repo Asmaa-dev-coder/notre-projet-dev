@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Panier - Miel et Miels</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="panier.css" />
+  <link rel="stylesheet" href="../Styles/panier.css" />
 </head>
 <body>
   <header>
@@ -21,7 +21,7 @@
       <span></span>
   
       <ul id="menu">
-        <li><a href="#accueil"><label for="menuCheckbox" onclick="this.parentNode.click();">Accueil</label></a></li>
+        <li><a href="../index.html"><label for="menuCheckbox" onclick="this.parentNode.click();">Accueil</label></a></li>
         <li><a href="../projet/Content/produits.html"><label for="menuCheckbox" onclick="this.parentNode.click();">Miels</label></a></li>
         <li><a href="#recettes"><label for="menuCheckbox" onclick="this.parentNode.click();">Recettes</label></a></li>
         <li><a href="#apropos"><label for="menuCheckbox" onclick="this.parentNode.click();">À propos</label></a></li>
@@ -48,7 +48,7 @@
     </div>
     <div class="links">
       <a href="#accueil">Accueil</a>
-      <a href="../projet/Content/produits.html">Miels</a>
+      <a href="../Content/produits.html">Miels</a>
       <a href="#recettes">Recettes</a>
       <a href="#apropos">À propos</a>
       <a href="#contact">Contact</a>
@@ -66,7 +66,7 @@
     <h1>Votre Panier</h1>
     <div id="panier-vide" style="display: none;">
             <p>Votre panier est vide.</p>
-      <a href="produits.html" class="btn-retour">Retour aux produits</a>
+      <a href="../Content/produits.html" class="btn-retour">Retour aux produits</a>
     </div>
 
     <div id="panier-produit-list"></div>
@@ -78,7 +78,7 @@
     </div>
   </main>
 
-  <script src="panier.js"></script>
+  <script src="../js/panier.js"></script>
 </body>
 </html>
 

@@ -456,7 +456,7 @@ header {
   border-radius: 5px;
   font-size: 1.1em;
 }
-.btn-overlay: hover {
+.btn-overlay:hover {
   background-color: #FF5733
 }
 
