@@ -18,7 +18,7 @@ header {
   position: relative;
 }
 
-/* -------- NAVIGATION DESKTOP -------- */
+
 .nav-desktop {
   display: none;
   justify-content: space-between;
@@ -65,11 +65,11 @@ header {
   cursor: pointer;
 }
 
-/* -------- NAVIGATION MOBILE -------- */
+
 #menu-mobile {
   display: block;
   position: relative; 
-  padding-top: 20px; /* espace sous le hamburger */
+  padding-top: 20px; 
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
@@ -158,7 +158,7 @@ header {
   transform-origin: 0% 100%;
 }
 
-/* Animation du hamburger en croix */
+
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-1px, 0px);
@@ -174,7 +174,7 @@ header {
   transform: rotate(-45deg) translate(1px, -1px);
 }
 
-/* Menu déroulant */
+
 #menu {
   position: absolute;
   max-width: 400px;
@@ -204,14 +204,14 @@ header {
   cursor: pointer;
 }
 
-/* Afficher le menu quand coché */
+
 #menuToggle input:checked ~ ul {
   transform: none;
 }
 
 
 
-/* Section a propos*/
+
 .apropos-section {
   padding: 60px 20px;
   background-color: #fffbee;
@@ -239,7 +239,7 @@ header {
 }
 
 
-/* Section Contact */
+
 .contact-section {
   padding: 60px 20px;
   background-color: #fcfff4; 
@@ -295,14 +295,14 @@ header {
 
 
 
-/* -------- RESPONSIVE -------- */
+
 @media screen and (min-width: 769px) {
   #menu-mobile {
-    display: none; /* Cacher menu mobile en desktop */
+    display: none; 
   }
 
   .nav-desktop {
-    display: flex; /* Afficher menu desktop sur grand écran */
+    display: flex; 
   }
 }
 

@@ -5,10 +5,20 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* au lieu de center pour que ça parte du haut */
+  justify-content: flex-start; 
   align-items: center;
   background: linear-gradient(135deg, #fceabb, #fadd8ed8, #fceabb);
   
+}
+.logo {
+  margin-top: 3px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.logo img {
+  width: 170px;
+  height: auto;
 }
 
     h1 {
@@ -20,8 +30,8 @@
     }
     form {
       background-image: url(../Images/jocelyn-morales-nKMGJAy3Qps-unsplash.jpg);
-           background-repeat: no-repeat;          /* pour pas qu’elle se répète */
-  background-position: center;           /* la centrer */
+           background-repeat: no-repeat;          
+  background-position: center;           
   background-size: cover;
       background-color: #fff8dc;
       padding: 20px;
@@ -194,14 +204,14 @@
   position: relative;
 }
 
-/* Icône abeille à gauche */
+
 .abeille-gauche {
   width: 60px;
   height: auto;
   animation: voleAbeille 4s infinite ease-in-out;
 }
 
-/* Icône pot de miel à droite */
+
 .pot-miel-droite {
   width: 80px;
   height: auto;
@@ -209,7 +219,7 @@
   animation: voleAbeille 4s infinite
 }
 
-/* Animation abeille qui bouge */
+
 @keyframes voleAbeille {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-10px); }

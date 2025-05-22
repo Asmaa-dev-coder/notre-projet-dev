@@ -78,14 +78,14 @@ form h1 {
     transform: translateY(-50%);
     cursor: pointer;
     color: #666;
-    width: 20px; /* Largeur fixe */
-    height: 20px; /* Hauteur fixe */
+    width: 20px; 
+    height: 20px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1; /* Évite le décalage vertical */
-    transition: none; /* Désactive les transitions qui pourraient causer un décalage */
-    user-select: none; /* Empêche la sélection */
+    line-height: 1;
+    transition: none; 
+    user-select: none; 
   }
 
 button[type='submit'] {

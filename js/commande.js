@@ -14,10 +14,10 @@ function afficherMessageVolAbeille() {
 
   document.body.appendChild(notif);
 
-  // Animation apparition
+  
   setTimeout(() => notif.classList.add("visible"), 10);
 
-  // Disparition + abeilles s'envolent après 4s
+  
   setTimeout(() => {
     notif.classList.remove("visible");
     notif.querySelectorAll('.abeille').forEach((abeille, i) => {
@@ -88,7 +88,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     afficherProduitsDansCommande();
 
-    // Affiche le récap seulement si tout est rempli
     if (nom && prenom && email && adresse && livraison && paiement) {
       recap.style.display = 'block';
     }
@@ -97,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
   form.addEventListener('input', updateRecap);
 
   form.addEventListener('submit', function(event) {
-    event.preventDefault(); // empêche le rechargement
+    event.preventDefault(); 
 
     if (!form.checkValidity()) {
       alert('Merci de remplir tous les champs obligatoires.');
@@ -111,7 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    localStorage.removeItem("panier"); // vide le panier
+    localStorage.removeItem("panier");
     form.reset();
     recap.style.display = 'none';
   });

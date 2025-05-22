@@ -23,7 +23,7 @@ header {
   z-index: 1000;
 }
 
-/* -------- NAVIGATION DESKTOP -------- */
+
 .nav-desktop {
   display: none;
   justify-content: space-between;
@@ -65,11 +65,11 @@ header {
   cursor: pointer;
 }
 
-/* -------- NAVIGATION MOBILE -------- */
+
 #menu-mobile {
   display: block;
-  position: relative; /* pour que logo-mobile se place bien */
-  padding-top: 20px; /* espace sous le hamburger */
+  position: relative; 
+  padding-top: 20px; 
   text-align: center;
 }
 
@@ -99,8 +99,8 @@ header {
 #menuToggle {
   display: block;
   position: fixed;
-  top: 20px;      /* ajusté pour coller à ton header */
-  left: 10px;     /* décalé un peu plus à gauche */
+  top: 20px;      
+  left: 10px;     
   z-index: 999;
 
   -webkit-user-select: none;
@@ -123,9 +123,9 @@ header {
   height: 32px;
   position: absolute;
   top: -7px;
-  left: -15px;   /* débordement à gauche plus important */
+  left: -15px;  
   cursor: pointer;
-  opacity: 0;    /* input invisible */
+  opacity: 0;    
   z-index: 2;
   -webkit-touch-callout: none;
 }
@@ -157,7 +157,7 @@ header {
   transform-origin: 0% 100%;
 }
 
-/* Animation du hamburger en croix */
+
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-1px, 0px);
@@ -173,7 +173,6 @@ header {
   transform: rotate(-45deg) translate(1px, -1px);
 }
 
-/* Menu déroulant */
 #menu {
   position: absolute;
   max-width: 400px;
@@ -203,18 +202,18 @@ header {
   cursor: pointer;
 }
 
-/* Afficher le menu quand coché */
+
 #menuToggle input:checked ~ ul {
   transform: none;
 }
 
 @media screen and (min-width: 769px) {
   #menu-mobile {
-    display: none; /* Cacher menu mobile en desktop */
+    display: none; 
   }
 
   .nav-desktop {
-    display: flex; /* Afficher menu desktop sur grand écran */
+    display: flex; 
   }
 }
   
@@ -242,9 +241,7 @@ header {
     position: relative;
     z-index: 1;
   }
-  /*.hero-section:hover {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 1), rgba(255, 152, 0, 1));
-  }*/
+  
   .titre-page {
     font-family: 'Times New Roman', Times, serif;
     font-family: 'Times New Roman', Times, serif;
@@ -478,7 +475,6 @@ header {
   display: none;
 }
 
-/* Mobile : écran max 768px */
 @media screen and (max-width: 768px) {
   #compteur-panier {
     display: inline-block;
@@ -505,7 +501,7 @@ header {
   }
 }
 
-/* Desktop : écran min 769px */
+
 @media screen and (min-width: 769px) {
   #compteur-panier {
     display: none;

@@ -1,7 +1,7 @@
 const panier = JSON.parse(localStorage.getItem('panier')) || [];
 const contenuPanier = document.getElementById('panier-produit-list');
 const totalElement = document.getElementById('panier-total');
-const panierVide = document.getElementById('panier-vide'); // bloc message panier vide
+const panierVide = document.getElementById('panier-vide'); 
 const panierTotalContainer = document.getElementById('panier-total-container');
 
 
@@ -67,7 +67,7 @@ contenuPanier.addEventListener('click', function(e) {
     if (produit.quantite > 1) {
       produit.quantite--;
     } else {
-      // Supprimer le produit si quantité à 1 et qu'on clique sur -
+      
       const index = panier.indexOf(produit);
       panier.splice(index, 1);
     }
@@ -78,9 +78,9 @@ contenuPanier.addEventListener('click', function(e) {
   const nom = e.target.getAttribute('data-nom');
   const index = panier.findIndex(p => p.nom === nom);
   if (index !== -1) {
-    panier.splice(index, 1);               // Supprime le produit du panier
-    localStorage.setItem('panier', JSON.stringify(panier));  // Met à jour localStorage
-    afficherPanier();                      // Réaffiche le panier à jour
+    panier.splice(index, 1);               
+    localStorage.setItem('panier', JSON.stringify(panier));  
+    afficherPanier();                      
   }
 }
 
