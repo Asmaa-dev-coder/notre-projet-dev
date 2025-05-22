@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site de Miel</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../projet/Styles/index.css" />
+  <link rel="stylesheet" href="../projet/Styles/slideshow.css">
+</head>
+<body>
+
+<header>
+  <!-- Menu Hamburger (mobile) -->
+  <nav role="navigation" id="menu-mobile">
+    
+    <div id="menuToggle">
+      <!-- Checkbox cachée pour déclencher le menu -->
+      <input type="checkbox" id="menuCheckbox" />
+  
+      <span></span>
+      <span></span>
+      <span></span>
+  
+      <ul id="menu">
+        <li><a href="../projet/index.html"><label for="menuCheckbox" onclick="this.parentNode.click();">Accueil</label></a></li>
+        <li><a href="content/produits.html"><label for="menuCheckbox" onclick="this.parentNode.click();">Miels</label></a></li>
+        <li><a href="content/recettes"><label for="menuCheckbox" onclick="this.parentNode.click();">Recettes</label></a></li>
+        <li><a href="#apropos"><label for="menuCheckbox" onclick="this.parentNode.click();">À propos</label></a></li>
+        <li><a href="#contact"><label for="menuCheckbox" onclick="this.parentNode.click();">Contact</label></a></li>
+      </ul>
+    </div>
+
+    <div class="logo-mobile">
+      <img src="images/Logo_MieletMiels.jpg" alt="Logo du site" />
+    </div>
+
+    <div class="nav-icons-mobile">
+      <a href="content/connexion.html"><i class="fas fa-user"></i></a>
+      <a href="content/panier.html"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+
+  </nav>
+  
+
+  <!-- Menu Desktop -->
+  <nav class="nav-desktop">
+    <div class="logo">
+      <img src="../projet/Images/Logo_MieletMiels.jpg" alt="Logo du site" />
+    </div>
+    <div class="links">
+      <a href="../projet/index.html">Accueil</a>
+      <a href="content/produits.html">Miels</a>
+      <a href="content/recettes.html">Recettes</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <input type="text" placeholder="Rechercher..." />
+      <a href="../projet/Content/connexion.html"><i class="fas fa-user"></i></a>
+      <a href="../projet/Content/panier.html"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </nav>
+
+</header>
+
+<!-- Sections principales -->
+<section id="accueil">
+  <div class="wrapper">
+    <input checked type="radio" name="slider" id="slide1" />
+    <input type="radio" name="slider" id="slide2" />
+    <input type="radio" name="slider" id="slide3" />
+    
+    <div class="slider-wrapper">
+      <div class="inner">
+  
+        <article>
+          <img src="../projet/Images/baniere_miel_et_miels.png" />
+          <div class="info full-overlay">
+            <div class="content">
+              <h1>Bienvenue chez Miel et Miels®</h1>
+              <p>Explorez l'excellence du miel français, issu de nos terroirs et élaboré avec passion depuis 1958.<br>
+              Chaque pot est un trésor de saveurs, fruit du savoir-faire de nos apiculteurs.</p>
+            </div>
+          </div>
+        </article>
+  
+        <article>
+          <img src="../projet/Images/gamme_miel_et_miels.jpg" />
+          <div class="info left-overlay">
+            <div class="content">
+              <h1>Laissez-vous séduire par nos Miels de Crus</h1>
+              <p>
+                Des nectars rares, purs et authentiques issus des plus belles floraisons françaises.
+              </p>
+              <a href="../projet/Content/produits.html" class="button">Aller voir</a>
+            </div>
+          </div>
+        </article>
+          
+        <article>
+          <img src="../projet/Images/Filet-de-canette-sauce-miel-Copie-scaled-1536x1536.jpg" />
+          <div class="info center-overlay">
+            <div class="content">
+              <h1>Découvrez nos recettes gourmandes</h1>
+              <p>
+                Mettez le miel à l’honneur dans votre cuisine avec des idées simples, créatives et savoureuses.
+              </p>
+              <a href="../projet/Content/Recettes.html" class="button">Voir les recettes</a>
+            </div>
+          </div>
+        </article>        
+      </div>
+    </div>
+  
+    <div class="slider-prev-next-control">
+      <label class="prev1" for="slide5"><i class="fas fa-angle-left"></i></label>
+      <label class="next1" for="slide2"><i class="fas fa-angle-right"></i></label>
+  
+      <label class="prev2" for="slide1"><i class="fas fa-angle-left"></i></label>
+      <label class="next2" for="slide3"><i class="fas fa-angle-right"></i></label>
+  
+      <label class="prev3" for="slide2"><i class="fas fa-angle-left"></i></label>
+      <label class="next3" for="slide1"><i class="fas fa-angle-right"></i></label>
+  
+    </div>
+  
+    <div class="slider-dot-control">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+    </div>
+  </div>  
+</section>
+
+
+<section id="apropos" class="apropos-section">
+  <div class="apropos-container">
+    <h2>Le miel… au pluriel</h2>
+    <p>La sensorialité comme essence<br />
+    Dans leur écrin, tels des bijoux de créateurs, les élixirs Miel et Miels® jouent la transparence et portent la Nature aux nues !<br />
+    Délicatesse des parfums et noms enchanteurs, Miel et Miels® vous propose plusieurs collections. Chacune provoquera une émotion différente, pour le plaisir des gourmets...</p>
+
+    <h2>Des abeilles et des hommes !</h2>
+    <p>Les apiculteurs et apicultrices à l’origine de Miel et Miels® sont avant tout des hommes et des femmes de passion !<br />
+    Depuis 1958, ces orfèvres du miel ont décidé de se réunir pour protéger le fruit de leurs efforts communs, en créant la coopérative France Miel.<br />
+    Autour des mêmes engagements pour la qualité et le respect de la Nature, ils sont fiers de partager leur passion des abeilles et du miel et de garantir aux gourmands le meilleur, et ce, de la ruche au pot !</p>
+
+    <h2>De la ruche à votre cuillère,<br /> il n’y a qu’un pot !</h2>
+    <p>Nobles et purs, ces miels d’excellence combleront les papilles les plus exigeantes.<br />
+    La gamme Miel et Miels® se décline essentiellement en 3 collections aux noms évocateurs : Miels de Crus, Miels de Terroirs et Mariages de saveurs. Sélectionnés pour leurs qualités et récoltés en petite quantité, ces miels rares et précieux vous feront apprécier la pluralité des variétés.</p>
+  </div>
+</section>
+
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <h2>Contactez-nous</h2>
+    <p>Vous avez une question, une demande particulière ou souhaitez simplement en savoir plus sur nos produits ?</p>
+    <p>Nous serons ravis de vous répondre !</p>
+
+    <div class="contact-info">
+      <p><i class="fas fa-phone-alt"></i> <strong>Téléphone</strong><br>
+        +33 (0)3 85 27 00 10</p>
+
+      <p><i class="fas fa-envelope"></i> <strong>Email</strong><br>
+        <a href="mailto:contact@miel-et-miels.fr">contact@miel-et-miels.fr</a></p>
+
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse</strong><br>
+        France Miel – Miel et Miels®<br>
+        ZA les Morands<br>
+        71290 Rancy – France</p>
+
+      <p><i class="fas fa-clock"></i> <strong>Horaires d’ouverture</strong><br>
+        Du lundi au vendredi : 9h – 12h / 14h – 17h</p>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 3;
+
+  setInterval(() => {
+    document.getElementById(`slide${currentSlide}`).checked = false;
+    currentSlide = currentSlide < totalSlides ? currentSlide + 1 : 1;
+    document.getElementById(`slide${currentSlide}`).checked = true;
+  }, 6000);
+</script>
+
+</body>
+</html>
